@@ -1,0 +1,13 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "plugins": [
+    "prettier",
+    "plugin:vue/vue3-recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
