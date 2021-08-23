@@ -6,8 +6,6 @@ dist-ssr
 
 # editors
 .idea
-/**/dist
-/**/dist_main
-/**/node_modules
+/**/dist*
 
 /**/*error.log

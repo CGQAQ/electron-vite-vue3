@@ -1,12 +1,15 @@
 {
   "name": "generalavaitionresources",
   "version": "0.0.0",
+  "author": "CGQAQ",
   "main": "dist_main/index.js",
+  "homepage": "./",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "prebuild": "rollup -c && vue-tsc --noEmit && vite build",
+    "build": "npm run prebuild && electron-builder -w",
     "prerun": "rollup -c",
-    "run": "npm run prerun && electron .",
+    "run": "concurrently \"npm run dev\"  \"npm run prerun && electron .\"",
     "serve": "vite preview"
   },
   "build": {
@@ -22,19 +25,25 @@
       "oneClick": false
     },
     "files": [
-      "dist/**"
-    ]
+      "dist/**",
+      "dist_main/**"
+    ],
+    "directories": {
+      "output": "dist_electron"
+    }
   },
   "dependencies": {
-    "electron": "^13.2.1",
-    "electron-builder": "^22.11.7",
-    "vue": "^3.0.5"
+    "vue": "^3.0.5",
+    "electron-is-dev": "^2.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@vitejs/plugin-vue": "^1.3.0",
     "@vue/compiler-sfc": "^3.0.5",
-    "electron-is-dev": "^2.0.0",
+    "concurrently": "^6.2.1",
+    "electron": "^13.2.1",
+    "electron-builder": "^22.11.7",
     "eslint": "^7.32.0",
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-vue": "^7.16.0",
@@ -42,6 +51,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.3.2",
     "vite": "^2.4.4",
-    "vue-tsc": "^0.2.2"
+    "vue-tsc": "^0.2.2",
+    "wait-on": "^6.0.0"
   }
 }

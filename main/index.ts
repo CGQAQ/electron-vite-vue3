@@ -20,7 +20,7 @@ async function createMainWindow(): Promise<BrowserWindow> {
     await win.loadURL("http://localhost:3000");
     win.webContents.openDevTools();
   } else {
-    await win.loadURL(`file://${require("path").join(__dirname, "dist/index.html")}`)
+    await win.loadURL(`file://${require("path").join(__dirname, "../dist/index.html")}`)
   }
   return win;
 }
