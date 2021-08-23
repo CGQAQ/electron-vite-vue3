@@ -1,6 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <img class="m-auto bg-[#000]" alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld class="" msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
 <script lang="ts">
@@ -15,6 +15,8 @@ export default defineComponent({
 })
 </script>
 
+<style src="./tailwind-loader.css"></style>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -25,3 +27,4 @@ export default defineComponent({
   margin-top: 60px;
 }
 </style>
+
