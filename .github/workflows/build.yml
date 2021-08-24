@@ -26,8 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Install dependencies
       run: yarn --frozen-lockfile
     - run: yarn fmt:check
     - run: yarn lint:check
-    - run: GH_TOKEN=${{ secrets.GITHUB_TOKEN }} yarn run build
+    - run: yarn run build
