@@ -30,4 +30,4 @@ jobs:
       run: yarn --frozen-lockfile
     - run: yarn fmt:check
     - run: yarn lint:check
-    - run: yarn run build
+    - run: GH_TOKEN=${{ secrets.GITHUB_TOKEN }} yarn run build

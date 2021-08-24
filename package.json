@@ -22,6 +22,13 @@
     "appId": "com.cgqaq.app",
     "productName": "example app",
     "copyright": "Copyright © 2021 ${author}",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "CGQAQ",
+        "repo": "electron-vite-vue3"
+      }
+    ],
     "win": {
       "target": "nsis",
       "icon": "build/icon.ico"
