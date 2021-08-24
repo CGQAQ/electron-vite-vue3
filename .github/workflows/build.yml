@@ -29,4 +29,4 @@ jobs:
         cache: 'yarn'
     - run: yarn fmt:check
     - run: yarn lint:check
-    - run: yarn run build --if-present
+    - run: yarn run build
