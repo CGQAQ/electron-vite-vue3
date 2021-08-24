@@ -27,6 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
     - name: Install dependencies
+      run: Remove-Item .yarnrc
       run: yarn --frozen-lockfile
     - run: yarn fmt:check
     - run: yarn lint:check
