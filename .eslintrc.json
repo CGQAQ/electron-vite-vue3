@@ -3,9 +3,19 @@
     "es6": true,
     "node": true
   },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
   "plugins": [
-    "prettier",
-    "plugin:vue/vue3-recommended"
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended",
+    "prettier"
   ],
   "rules": {
     "prettier/prettier": "error"

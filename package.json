@@ -8,11 +8,15 @@
     "dev": "vite",
     "prebuild": "concurrently \"rollup -c\" \"vue-tsc --noEmit\" \"vite build\"",
     "build": "npm run prebuild && electron-builder -w",
-    "prerun": "rollup -c",
-    "start": "concurrently \"npm run dev\" \"npm run prerun && electron .\"",
+    "main:build": "rollup -c",
+    "start": "concurrently \"npm run dev\" \"npm run main:build && wait-on tcp:3000 && electron .\"",
     "serve": "vite preview",
-    "clean-all": "rimraf dist* node_modules",
-    "clean": "rimraf dist*"
+    "clean-all": "wait-on node_modules/esbuild/esbuild.exe && rimraf dist* node_modules",
+    "clean": "rimraf dist*",
+    "fmt": "prettier --write ./main/**/*.ts ./src/**/*.{vue,ts,css}",
+    "fmt:check": "prettier --check ./main/**/*.ts ./src/**/*.{vue,ts,css}",
+    "lint": "eslint  --fix ./main/**/*.ts ./src/**/*.{vue,ts}",
+    "lint:check": "eslint  ./main/**/*.ts ./src/**/*.{vue,ts}"
   },
   "build": {
     "appId": "com.cgqaq.app",
@@ -41,6 +45,8 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
     "@vitejs/plugin-vue": "^1.3.0",
     "@vue/compiler-sfc": "^3.0.5",
     "autoprefixer": "^10.3.2",
@@ -48,15 +54,18 @@
     "electron": "^13.2.1",
     "electron-builder": "^22.11.7",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-vue": "^7.16.0",
+    "eslint-plugin-vue": "^7.0.0-beta.4",
     "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.56.3",
     "rollup-plugin-typescript2": "^0.30.0",
     "tailwindcss": "^2.2.7",
     "typescript": "^4.3.2",
     "vite": "^2.4.4",
+    "vue-eslint-parser": "^7.10.0",
     "vue-tsc": "^0.2.2",
     "wait-on": "^6.0.0"
   }

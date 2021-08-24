@@ -1,18 +1,25 @@
 <template>
-  <img class="m-auto bg-[#000]" alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld class="" msg="Hello Vue 3 + TypeScript + Vite" />
+  <img
+    class="m-auto bg-[#000]"
+    alt="Vue logo"
+    src="./assets/logo.png"
+  />
+  <HelloWorld
+    class=""
+    msg="Hello Vue 3 + TypeScript + Vite"
+  />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent } from "vue";
 
+import HelloWorld from "./components/HelloWorld.vue";
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-})
+    HelloWorld,
+  },
+});
 </script>
 
 <style src="./tailwind-loader.css"></style>
@@ -27,4 +34,3 @@ export default defineComponent({
   margin-top: 60px;
 }
 </style>
-
