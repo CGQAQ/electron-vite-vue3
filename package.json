@@ -13,10 +13,10 @@
     "serve": "vite preview",
     "clean-all": "wait-on node_modules/esbuild/esbuild.exe && rimraf dist* node_modules",
     "clean": "rimraf dist*",
-    "fmt": "prettier --write ./main/**/*.ts ./src/**/*.{vue,ts,css}",
-    "fmt:check": "prettier --check ./main/**/*.ts ./src/**/*.{vue,ts,css}",
-    "lint": "eslint  --fix ./main/**/*.ts ./src/**/*.{vue,ts}",
-    "lint:check": "eslint  ./main/**/*.ts ./src/**/*.{vue,ts}"
+    "fmt": "prettier --write ./*.{js,json,ts} ./main/**/*.ts ./src/**/*.{vue,ts,css}",
+    "fmt:check": "prettier --check ./*.{js,json,ts} ./main/**/*.ts ./src/**/*.{vue,ts,css}",
+    "lint": "eslint  --fix ./*.{js,json,ts} ./main/**/*.ts ./src/**/*.{vue,ts}",
+    "lint:check": "eslint ./*.{js,json,ts} ./main/**/*.ts ./src/**/*.{vue,ts}"
   },
   "build": {
     "appId": "com.cgqaq.app",
