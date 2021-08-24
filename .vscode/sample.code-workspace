@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"[vue]": {
+			"editor.formatOnSave": true,
+			"editor.formatOnSaveMode": "modificationsIfAvailable",
+			"editor.tabSize": 2,
+			"editor.mouseWheelZoom": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescript]": {
+			"editor.formatOnSave": true,
+			"editor.formatOnSaveMode": "modificationsIfAvailable",
+			"editor.tabSize": 2,
+			"editor.mouseWheelZoom": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		}
+	}
+}

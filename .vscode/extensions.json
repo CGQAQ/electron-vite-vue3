@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"octref.vetur",
+		"editorconfig.editorconfig",
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint",
+		"christian-kohler.path-intellisense",
+		"2gua.rainbow-brackets",
+		"formulahendry.auto-close-tag",
+		"prasadbobby.auto-rename-tag"
+	]
+}
